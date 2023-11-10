@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skinbox - Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <nav class="navbar">
+            <div class="logo">skinbox</div>
+        </nav>
+
+        <div class="stripe"></div>
+
+        <div class="text">
+            <h1>
+                <span class="header">bienvenidos a</span>
+            </h1>
+            <h2>Skinbox</h2>
+            <p>
+                <span class="para">
+                Una exposición de la Universidad de Boyacá.
+                </span>
+            </p>
+        </div>
+
+        <canvas class="canvas" id="canvas" width="300px" height="300px"></canvas>
+
+        <div class="card-container">
+            <div class="card">
+                <div class="card-identifier">Expositor 1</div>
+                <img src="path-to-expositor1-photo.jpg" class="card-image">
+            </div>
+        </div>
+
+        <div class="media">
+            <ul>
+                <li>
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </li>
+                <li>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </li>
+                <li>
+                    <ion-icon name="logo-youtube"></ion-icon>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js" type="module"></script>
+</body>
+
+</html>

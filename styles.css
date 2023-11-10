@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Poppins:ital,wght@0,200;0,600;0,900;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #f4f2ec;
+    font-family: 'poppins', sans-serif;
+    overflow-y: hidden;
+}
+
+.canvas {
+    position: absolute;
+    top: -20px;
+    left: 110px;
+    z-index: -1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+    color: #555555;
+    padding: 0 50px;
+}
+
+.navbar .logo {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.stripe {
+    position: absolute;
+    height: 70px;
+    top: 305px;
+    background: linear-gradient(to right, #ee4540, #c0342f);
+    transition: ease-in-out 0.2s;
+}
+
+.stripe:hover {
+    transform: scaleY(1.6);
+}
+
+.text {
+    position: absolute;
+    top: 200px;
+    left: 400px;
+}
+
+.text h1 {
+    font-size: 70px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #555555;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+    width: 900px;
+}
+
+.text h1 .header {
+    position: absolute;
+    bottom: 25px;
+}
+
+.text h2 {
+    position: absolute;
+    font-family: 'Josefin Sans', sans-serif;
+    top: 100px;
+    color: #f4f2ec;
+    font-size: 100px;
+    font-weight: 700;
+}
+
+.text p {
+    width: 400px;
+    font-size: 12px;
+    margin-top: 45px;
+    position: relative;
+    height: 110px;
+    color: #555555;
+    font-weight: 600;
+}
+
+.media {
+    position: absolute;
+    top: 410px;
+    left: 40px;
+}
+
+.media ul {
+    position: absolute;
+    list-style: none;
+}
+
+.media ul li {
+    color: #555555;
+    padding: 10px 0;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    margin: 50vh 10%;
+}
+
+.card {
+    border: 2px solid #ee4540;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(33.333% - 20px);
+    text-align: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: relative; 
+}
+
+.card:hover .card-image {
+    display: block;
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .text {
+        position: absolute;
+        top: 200px;
+        left: 100px;
+    }
+
+    .text h1 {
+        display: inline-block;
+    }
+
+    .text h2 {
+        color: #ee4540;
+    }
+
+    .stripe {
+        display: none;
+    }
+}
