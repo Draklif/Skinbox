@@ -11,14 +11,7 @@ body {
     min-height: 100vh;
     background: #f4f2ec;
     font-family: 'poppins', sans-serif;
-    overflow-y: hidden;
-}
-
-.canvas {
-    position: absolute;
-    top: -20px;
-    left: 110px;
-    z-index: -1;
+    overflow-x: hidden;
 }
 
 .navbar {
@@ -39,8 +32,8 @@ body {
 .stripe {
     position: absolute;
     height: 70px;
-    top: 305px;
-    background: linear-gradient(to right, #ee4540, #c0342f);
+    top: 220px;
+    background: linear-gradient(to right, #ED1D24, #ED1D24);
     transition: ease-in-out 0.2s;
 }
 
@@ -48,46 +41,35 @@ body {
     transform: scaleY(1.6);
 }
 
-.text {
+.main .skinbox {
     position: absolute;
+    max-width: 500px;
+    z-index: 1000000;
+}
+
+.main {
     top: 200px;
-    left: 400px;
-}
-
-.text h1 {
-    font-size: 70px;
-    text-transform: uppercase;
-    font-weight: 900;
-    color: #555555;
-    margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-    height: 150px;
-    width: 900px;
-}
-
-.text h1 .header {
     position: absolute;
-    bottom: 25px;
+    left: 22%
 }
 
-.text h2 {
+.main img {
     position: absolute;
-    font-family: 'Josefin Sans', sans-serif;
-    top: 100px;
-    color: #f4f2ec;
-    font-size: 100px;
-    font-weight: 700;
+    top: -270px;
+    max-width: 1100px;
 }
 
-.text p {
-    width: 400px;
-    font-size: 12px;
+.main p {
+    width: 800px;
+    font-size: 20px;
     margin-top: 45px;
     position: relative;
     height: 110px;
     color: #555555;
     font-weight: 600;
+    text-align: right;
+    left: 80%;
+    top: 300px;
 }
 
 .media {
@@ -113,13 +95,19 @@ body {
     transform: scale(1.6);
 }
 
+.card-list {
+    position: absolute;
+    top: 500px;
+    width: 100%;
+}
+
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 60px;
     justify-content: center;
-    padding: 20px;
-    margin: 50vh 10%;
+    padding: 24px;
+    margin: 50vh 24px 0;
 }
 
 .card {
@@ -128,39 +116,127 @@ body {
     border-radius: 8px;
     width: calc(33.333% - 20px);
     text-align: center;
-    transition: transform 0.3s ease;
-    cursor: pointer;
     background: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     position: relative; 
+    height: 768px;
 }
 
-.card:hover .card-image {
-    display: block;
+.card:hover {
+    background-color: #555555;
 }
 
-.card-image {
-    max-width: 100%;
-    height: auto;
-    display: none;
+article {
+    position: relative;
+    width: 400px;
+    transition: all .3s ease;
+}
+
+article img:first-child {
+    box-shadow: 0 60px 60px -60px rgba(0, 30, 255, 0.5);
+    border-radius: 4px;
+    object-fit: cover;
+    width: 100%;
+}
+
+article img:last-child {
+    position: absolute;
+    width: 400px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(25%);
+    transition: .3s ease;
+    opacity: 0;
+}
+
+article:hover {
+    transform: perspective(250px) rotateX(10deg) translateY(-5%) translateZ(0);
+}
+
+article::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom, transparent 10%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0) 95%);
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+article:hover::before {
+    opacity: 1;
+}
+
+article:hover img:last-child {
+    opacity: 1;
+    transform: translateY(10%);
 }
 
 @media (max-width: 1024px) {
-    .text {
-        position: absolute;
-        top: 200px;
-        left: 100px;
-    }
-
-    .text h1 {
-        display: inline-block;
-    }
-
-    .text h2 {
-        color: #ee4540;
+    body {
+        overflow-x: hidden;
     }
 
     .stripe {
         display: none;
+    }
+
+    .main {
+        position: absolute;
+        top: 300px;
+    }
+
+    .main p {
+        max-width: 600px;
+        font-size: 12px;
+        position: relative;
+        height: 110px;
+        color: #555555;
+        font-weight: 600;
+        text-align: center;
+        left: -10px;
+        top: 40px;
+    }
+
+    .main img {
+        max-width: 800px;
+        top: -320px;
+        left: -100px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .stripe {
+        display: none;
+    }
+
+    .main {
+        position: absolute;
+        top: 300px;
+    }
+
+    .main p {
+        max-width: 300px;
+        font-size: 12px;
+        position: relative;
+        height: 110px;
+        color: #555555;
+        font-weight: 600;
+        text-align: center;
+        left: -10px;
+        top: 40px;
+    }
+
+    .main img {
+        max-width: 420px;
+        top: -200px;
+        left: -65px;
     }
 }
