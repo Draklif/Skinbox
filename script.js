@@ -1,31 +1,6 @@
-import * as THREE from 'three';
-
 console.log(window.outerWidth);
 console.log(window.outerHeight);
 if (window.outerWidth >= 1024) {
-    // const canvas = document.getElementById('canvas')
-    // const scene = new THREE.Scene();
-    // const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-    // const cube = new THREE.Mesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshBasicMaterial({ color: 0xc0342f }))
-
-    // scene.background = new THREE.Color(0xf4f2ec)
-    // scene.add(cube)
-
-    // camera.position.z = 5;  
-
-    // const renderer = new THREE.WebGLRenderer({ canvas: canvas });
-    // renderer.setSize( 500, 500 );
-    // renderer.render(scene, camera)
-
-    // function animate() {
-    //     requestAnimationFrame(animate);
-    //     cube.rotation.x += 0.01;
-    //     cube.rotation.y += 0.01;
-
-    //     renderer.render(scene, camera)
-    // }
-    // animate()
 
     TweenMax.from('.navbar', 1, {
         delay: 1,
@@ -36,7 +11,7 @@ if (window.outerWidth >= 1024) {
 
     TweenMax.to(".stripe", 2.4, {
         delay: 0,
-        width: "100%",
+        width: 4000,
         ease: Expo.easeInOut
     })
 

@@ -31,7 +31,8 @@ body {
 
 .stripe {
     position: absolute;
-    height: 70px;
+    height: 10vh;
+    max-height: 70px;
     top: 220px;
     background: linear-gradient(to right, #ED1D24, #ED1D24);
     transition: ease-in-out 0.2s;
@@ -41,35 +42,29 @@ body {
     transform: scaleY(1.6);
 }
 
-.main .skinbox {
-    position: absolute;
-    max-width: 500px;
-    z-index: 1000000;
-}
-
 .main {
-    top: 200px;
     position: absolute;
-    left: 22%
+    width: 100vw;
+    top: -70px;
 }
 
-.main img {
-    position: absolute;
-    top: -270px;
+.main .skinbox {
+    position: relative;
+    left: 20vw;
+    width: 60vw;
     max-width: 1100px;
 }
 
 .main p {
     width: 800px;
     font-size: 20px;
-    margin-top: 45px;
     position: relative;
-    height: 110px;
+    height: auto;
     color: #555555;
     font-weight: 600;
     text-align: right;
-    left: 80%;
-    top: 300px;
+    left: calc(95% - 800px);
+    bottom: 80px;
 }
 
 .media {
@@ -104,7 +99,7 @@ body {
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 60px;
+    gap: 120px;
     justify-content: center;
     padding: 24px;
     margin: 50vh 24px 0;
@@ -175,68 +170,54 @@ article:hover img:last-child {
     transform: translateY(10%);
 }
 
-@media (max-width: 1024px) {
-    body {
-        overflow-x: hidden;
+@media (max-width: 1366px) {
+    .stripe {
+        top: 130px;
     }
+}
 
+@media (max-width: 1024px) {
+    .navbar {
+        display: none;
+    }
+    
     .stripe {
         display: none;
     }
 
     .main {
-        position: absolute;
-        top: 300px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 700px;
+        align-items: center;
+        justify-content: center;
+        padding-left: 40px;
     }
 
+    .main .skinbox {
+        position: initial;
+        width: 80%;
+    }
+    
     .main p {
-        max-width: 600px;
-        font-size: 12px;
-        position: relative;
-        height: 110px;
-        color: #555555;
-        font-weight: 600;
+        position: initial;
+        width: 80%;
+        font-size: 16px;
         text-align: center;
-        left: -10px;
-        top: 40px;
-    }
-
-    .main img {
-        max-width: 800px;
-        top: -320px;
-        left: -100px;
     }
 }
 
 @media (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
-
-    .stripe {
-        display: none;
-    }
-
     .main {
-        position: absolute;
-        top: 300px;
+        top: 10%;
+    }
+
+    .main .skinbox {
+        width: 100%;
     }
 
     .main p {
-        max-width: 300px;
         font-size: 12px;
-        position: relative;
-        height: 110px;
-        color: #555555;
-        font-weight: 600;
-        text-align: center;
-        left: -10px;
-        top: 40px;
-    }
-
-    .main img {
-        max-width: 420px;
-        top: -200px;
-        left: -65px;
     }
 }
